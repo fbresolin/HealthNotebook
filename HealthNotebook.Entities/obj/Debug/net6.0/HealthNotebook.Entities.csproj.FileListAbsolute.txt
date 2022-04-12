@@ -1,0 +1,12 @@
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\HealthNotebook.Entities.csproj.AssemblyReference.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\HealthNotebook.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\HealthNotebook.Entities.AssemblyInfoInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\HealthNotebook.Entities.AssemblyInfo.cs
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\HealthNotebook.Entities.csproj.CoreCompileInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\bin\Debug\net6.0\HealthNotebook.Entities.deps.json
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\bin\Debug\net6.0\HealthNotebook.Entities.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\bin\Debug\net6.0\ref\HealthNotebook.Entities.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\bin\Debug\net6.0\HealthNotebook.Entities.pdb
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\HealthNotebook.Entities.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\ref\HealthNotebook.Entities.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Entities\obj\Debug\net6.0\HealthNotebook.Entities.pdb

@@ -1,0 +1,17 @@
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\bin\Debug\net6.0\HealthNotebook.DataService.deps.json
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\bin\Debug\net6.0\HealthNotebook.DataService.runtimeconfig.json
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\bin\Debug\net6.0\HealthNotebook.DataService.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\bin\Debug\net6.0\ref\HealthNotebook.DataService.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\bin\Debug\net6.0\HealthNotebook.DataService.pdb
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.csproj.AssemblyReference.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.AssemblyInfoInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.AssemblyInfo.cs
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.csproj.CoreCompileInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\ref\HealthNotebook.DataService.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.pdb
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.genruntimeconfig.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\bin\Debug\net6.0\HealthNotebook.Entities.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\bin\Debug\net6.0\HealthNotebook.Entities.pdb
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.DataService\obj\Debug\net6.0\HealthNotebook.DataService.csproj.CopyComplete

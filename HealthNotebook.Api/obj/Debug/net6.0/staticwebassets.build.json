@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "aAeUIU/GJBENAetwhXTES3xQ7xjRWcOqHsc2q0kP5us=",
+  "Source": "HealthNotebook.Api",
+  "BasePath": "_content/HealthNotebook.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
