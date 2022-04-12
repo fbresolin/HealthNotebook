@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HealthNotebook.DataService.Data;
+using HealthNotebook.DataService.IConfiguration;
 using HealthNotebook.Entities.DbSet;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,18 +13,17 @@ namespace HealthNotebook.Api.Controllers
   [ApiController]
   public class UsersController : ControllerBase
   {
-    private readonly AppDbContext _context;
-    public UsersController(AppDbContext context)
+    private IUnitOfWork _unitOfWork;
+    public UsersController(IUnitOfWork unitOfWork)
     {
-      _context = context;
+      _unitOfWork = unitOfWork;
     }
     // Get
     [HttpGet]
-    [Route("GetUser")]
-    public IActionResult GetUser(Guid Id)
+    [Route("GetUser", Name = "GetUser")]
+    public async Task<IActionResult> GetUser(Guid Id)
     {
-      var user = _context.Users
-        .SingleOrDefault(u => u.Id == Id);
+      var user = await _unitOfWork.Users.GetById(Id);
 
       if (user == null)
         return NotFound();
@@ -32,7 +32,7 @@ namespace HealthNotebook.Api.Controllers
     }
     // Post
     [HttpPost]
-    public IActionResult AddUser(UserDto userDto)
+    public async Task<IActionResult> AddUser(UserDto userDto)
     {
       var user = new User();
       user.FirstName = userDto.FirstName;
@@ -43,19 +43,16 @@ namespace HealthNotebook.Api.Controllers
       user.DateOfBirth = Convert.ToDateTime(userDto.DateOfBirth);
       user.Status = 1;
 
-      _context.Users.Add(user);
-      _context.SaveChanges();
+      await _unitOfWork.Users.Add(user);
+      await _unitOfWork.CompleteAsync();
 
-      return Ok(); // return a 201
+      return CreatedAtRoute("GetUser", new { Id = user.Id }, userDto); // return a 201
     }
     // Get All
     [HttpGet]
-    public IActionResult GetUsers()
+    public async Task<IActionResult> GetUsers()
     {
-      var users = _context.Users
-        .Where(u => u.Status == 1)
-        .ToList();
-
+      var users = await _unitOfWork.Users.All();
       return Ok(users);
     }
   }
