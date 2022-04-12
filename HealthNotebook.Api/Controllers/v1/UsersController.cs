@@ -7,16 +7,12 @@ using HealthNotebook.DataService.IConfiguration;
 using HealthNotebook.Entities.DbSet;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HealthNotebook.Api.Controllers
+namespace HealthNotebook.Api.Controllers.v1
 {
-  [Route("api/[controller]")]
-  [ApiController]
-  public class UsersController : ControllerBase
+  public class UsersController : BaseController
   {
-    private IUnitOfWork _unitOfWork;
-    public UsersController(IUnitOfWork unitOfWork)
+    public UsersController(IUnitOfWork unitOfWork) : base(unitOfWork)
     {
-      _unitOfWork = unitOfWork;
     }
     // Get
     [HttpGet]

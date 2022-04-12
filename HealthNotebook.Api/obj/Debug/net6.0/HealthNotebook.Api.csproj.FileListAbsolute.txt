@@ -61,3 +61,4 @@ D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Api\bin\Debug\net6.0\Heal
 D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Api\bin\Debug\net6.0\HealthNotebook.Entities.pdb
 D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Api\bin\Debug\net6.0\Humanizer.dll
 D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll

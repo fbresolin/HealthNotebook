@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NIglCbeFLHyfnZUJE6SzP60i8Msh+wGFUyVpfl4Yzhm/l2LRHry806wL/gD3YYCOGVkCF1qi+cJBaYLnFionFw==",
+  "dgSpecHash": "m7eeCXTcRbPfiGIAMHsq+OCsKM98KCIDk2Ysq7ubFqkjjE8V4XHDMsgUGjeZhRnSkFLUrIvG0qFgUskQ03NJjA==",
   "success": true,
   "projectFilePath": "D:\\Users\\breso\\Documents\\HealthNotebook\\HealthNotebook.Api\\HealthNotebook.Api.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\breso\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.3\\microsoft.aspnetcore.cryptography.internal.6.0.3.nupkg.sha512",
     "C:\\Users\\breso\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.3\\microsoft.aspnetcore.cryptography.keyderivation.6.0.3.nupkg.sha512",
     "C:\\Users\\breso\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.3\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.3.nupkg.sha512",
+    "C:\\Users\\breso\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\breso\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.3\\microsoft.data.sqlite.core.6.0.3.nupkg.sha512",
     "C:\\Users\\breso\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\breso\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
