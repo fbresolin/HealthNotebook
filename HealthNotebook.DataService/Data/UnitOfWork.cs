@@ -11,25 +11,23 @@ namespace HealthNotebook.DataService.Data
 {
   public class UnitOfWork : IUnitOfWork, IDisposable
   {
-      private readonly AppDbContext _context;
-      private readonly ILogger _logger;
-    public IUsersRepository Users {get; private set; }
+    private readonly AppDbContext _context;
+    private readonly ILogger _logger;
+    public IUsersRepository Users { get; private set; }
 
     public UnitOfWork(
         AppDbContext context,
-        ILoggerFactory logger)
+        ILoggerFactory loggerFactory)
     {
-        _context = context;
-        
-        LoggerFactory loggerFactory = new LoggerFactory();
-        var _logger = loggerFactory.CreateLogger("dblogs");
+      _context = context;
+      _logger = loggerFactory.CreateLogger("dblogs");
 
-        Users = new UsersRepository(_context, _logger);
+      Users = new UsersRepository(_context, _logger);
     }
 
     public async Task CompleteAsync()
     {
-        await _context.SaveChangesAsync();
+      await _context.SaveChangesAsync();
     }
 
     public void Dispose()

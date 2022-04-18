@@ -1,11 +1,19 @@
+using System.Text;
+using HealthNotebook.Authentication.Configuration;
 using HealthNotebook.DataService.Data;
 using HealthNotebook.DataService.IConfiguration;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Update the Jwt config from the settings
+builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -24,6 +32,33 @@ builder.Services.AddApiVersioning(opt =>
   // Define the default Api version
   opt.DefaultApiVersion = ApiVersion.Default;
 });
+
+builder.Services.AddAuthentication(option =>
+{
+  option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+  option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+  option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(jwt =>
+{
+  // Getting the secret from the config
+  var key = Encoding.ASCII.GetBytes(builder.Configuration["JwtConfig:Secret"]);
+
+  jwt.SaveToken = true;
+  jwt.TokenValidationParameters = new TokenValidationParameters
+  {
+    ValidateIssuerSigningKey = true,
+    IssuerSigningKey = new SymmetricSecurityKey(key),
+    ValidateIssuer = false, // ToDo Update
+    ValidateAudience = false, // ToDo Update
+    RequireExpirationTime = false, // ToDoUpdate
+    ValidateLifetime = true
+  };
+});
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+  options.SignIn.RequireConfirmedAccount = true)
+  .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
 

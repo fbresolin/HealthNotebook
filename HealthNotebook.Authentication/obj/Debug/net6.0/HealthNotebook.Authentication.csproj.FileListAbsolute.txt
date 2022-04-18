@@ -1,0 +1,12 @@
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\bin\Debug\net6.0\HealthNotebook.Authentication.deps.json
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\bin\Debug\net6.0\HealthNotebook.Authentication.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\bin\Debug\net6.0\ref\HealthNotebook.Authentication.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\bin\Debug\net6.0\HealthNotebook.Authentication.pdb
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\HealthNotebook.Authentication.csproj.AssemblyReference.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\HealthNotebook.Authentication.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\HealthNotebook.Authentication.AssemblyInfoInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\HealthNotebook.Authentication.AssemblyInfo.cs
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\HealthNotebook.Authentication.csproj.CoreCompileInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\HealthNotebook.Authentication.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\ref\HealthNotebook.Authentication.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Authentication\obj\Debug\net6.0\HealthNotebook.Authentication.pdb

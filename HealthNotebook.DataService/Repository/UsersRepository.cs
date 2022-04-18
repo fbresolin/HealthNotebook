@@ -14,7 +14,8 @@ namespace HealthNotebook.DataService.Repository
   {
     public UsersRepository(
         AppDbContext context,
-        ILogger logger) : base(context, logger) { }
+        ILogger logger) : base(context, logger) 
+        { }
 
     public override async Task<IEnumerable<User>> All()
     {
