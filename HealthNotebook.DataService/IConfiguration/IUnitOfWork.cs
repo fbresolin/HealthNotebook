@@ -6,10 +6,11 @@ using HealthNotebook.DataService.IRepository;
 
 namespace HealthNotebook.DataService.IConfiguration
 {
-    public interface IUnitOfWork
-    {
-        IUsersRepository Users{get; }
+  public interface IUnitOfWork
+  {
+    IUsersRepository Users { get; }
+    IRefreshTokenRepository RefreshTokens { get; }
 
-        Task CompleteAsync();
-    }
+    Task CompleteAsync();
+  }
 }
