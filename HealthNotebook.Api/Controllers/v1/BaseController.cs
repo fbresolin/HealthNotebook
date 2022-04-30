@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HealthNotebook.DataService.IConfiguration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthNotebook.Api.Controllers.v1
@@ -12,10 +13,14 @@ namespace HealthNotebook.Api.Controllers.v1
   [ApiVersion("1.0")]
   public class BaseController : ControllerBase
   {
-    protected IUnitOfWork _unitOfWork;
-    public BaseController(IUnitOfWork unitOfWork)
+    public IUnitOfWork _unitOfWork;
+    public UserManager<IdentityUser> _userManager;
+    public BaseController(
+      IUnitOfWork unitOfWork,
+      UserManager<IdentityUser> userManager)
     {
       _unitOfWork = unitOfWork;
+      _userManager = userManager;
     }
   }
 }

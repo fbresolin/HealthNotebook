@@ -23,16 +23,14 @@ namespace HealthNotebook.Api.Controllers.v1
   public class AccountsController : BaseController
   {
     // class provided by AspNetCore Identity Framework
-    private readonly UserManager<IdentityUser> _userManager;
     private readonly TokenValidationParameters _tokenValidationParameters;
     private readonly JwtConfig _jwtConfig;
     public AccountsController(
         IUnitOfWork unitOfWork,
         UserManager<IdentityUser> userManager,
         TokenValidationParameters tokenValidationParameters,
-        IOptionsMonitor<JwtConfig> optionsMonitor) : base(unitOfWork)
+        IOptionsMonitor<JwtConfig> optionsMonitor) : base(unitOfWork, userManager)
     {
-      _userManager = userManager;
       _tokenValidationParameters = tokenValidationParameters;
       _jwtConfig = optionsMonitor.CurrentValue;
     }
@@ -327,6 +325,7 @@ namespace HealthNotebook.Api.Controllers.v1
       {
         Subject = new ClaimsIdentity(new[]{
                     new Claim("Id", user.Id),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
                     new Claim(JwtRegisteredClaimNames.Sub, user.Email), //unique Id
                     new Claim(JwtRegisteredClaimNames.Email, user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()) //used by the refresh token
