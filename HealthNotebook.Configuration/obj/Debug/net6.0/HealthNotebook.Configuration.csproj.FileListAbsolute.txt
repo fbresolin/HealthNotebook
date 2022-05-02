@@ -1,0 +1,12 @@
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\bin\Debug\net6.0\HealthNotebook.Configuration.deps.json
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\bin\Debug\net6.0\HealthNotebook.Configuration.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\bin\Debug\net6.0\ref\HealthNotebook.Configuration.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\bin\Debug\net6.0\HealthNotebook.Configuration.pdb
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\HealthNotebook.Configuration.csproj.AssemblyReference.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\HealthNotebook.Configuration.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\HealthNotebook.Configuration.AssemblyInfoInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\HealthNotebook.Configuration.AssemblyInfo.cs
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\HealthNotebook.Configuration.csproj.CoreCompileInputs.cache
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\HealthNotebook.Configuration.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\ref\HealthNotebook.Configuration.dll
+D:\Users\breso\Documents\HealthNotebook\HealthNotebook.Configuration\obj\Debug\net6.0\HealthNotebook.Configuration.pdb

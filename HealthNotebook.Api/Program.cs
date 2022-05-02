@@ -19,10 +19,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
+// Enable Api versionaning
 builder.Services.AddApiVersioning(opt =>
 {
   // Provide to the client the different Api version we have
@@ -65,11 +63,17 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
   options.SignIn.RequireConfirmedAccount = true)
   .AddEntityFrameworkStores<AppDbContext>();
 
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+  app.UseDeveloperExceptionPage();
   app.UseSwagger();
   app.UseSwaggerUI();
 }
