@@ -10,7 +10,7 @@ namespace HealthNotebook.DataService.IConfiguration
   {
     IUsersRepository Users { get; }
     IRefreshTokenRepository RefreshTokens { get; }
-
+    IHealthDataRepository IHealthData { get; }
     Task CompleteAsync();
   }
 }

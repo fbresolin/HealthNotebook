@@ -15,7 +15,7 @@ namespace HealthNotebook.DataService.Data
     private readonly ILogger _logger;
     public IUsersRepository Users { get; private set; }
     public IRefreshTokenRepository RefreshTokens { get; private set; }
-
+    public IHealthDataRepository IHealthData { get; private set; }
     public UnitOfWork(
         AppDbContext context,
         ILoggerFactory loggerFactory)
@@ -25,6 +25,7 @@ namespace HealthNotebook.DataService.Data
 
       Users = new UsersRepository(_context, _logger);
       RefreshTokens = new RefreshTokensRepository(_context, _logger);
+      IHealthData = new HealthDataRepository(_context, _logger);
     }
 
     public async Task CompleteAsync()

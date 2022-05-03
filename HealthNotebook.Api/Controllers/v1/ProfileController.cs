@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using HealthNotebook.Configuration.Messages;
 using HealthNotebook.DataService.IConfiguration;
 using HealthNotebook.Entities.DbSet;
 using HealthNotebook.Entities.Dtos.Errors;
 using HealthNotebook.Entities.Dtos.Generic;
 using HealthNotebook.Entities.Dtos.Incoming.Profile;
+using HealthNotebook.Entities.Dtos.Outgoing;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -19,15 +21,16 @@ namespace HealthNotebook.Api.Controllers.v1;
 public class ProfileController : BaseController
 {
   public ProfileController(
-      IUnitOfWork unitOfWork,
-      UserManager<IdentityUser> userManager) : base(unitOfWork, userManager)
+    IMapper mapper,
+    IUnitOfWork unitOfWork,
+    UserManager<IdentityUser> userManager) : base(mapper, unitOfWork, userManager)
   {
   }
   [HttpGet]
   public async Task<IActionResult> GetProfile()
   {
     var loggedInUser = await _userManager.GetUserAsync(HttpContext.User);
-    var result = new Result<User>();
+    var result = new Result<ProfileDto>();
 
     if (loggedInUser == null)
     {
@@ -49,12 +52,14 @@ public class ProfileController : BaseController
       return BadRequest(result);
     }
 
-    return Ok(profile);
+    var mappedProfile = _mapper.Map<ProfileDto>(profile);
+    result.Content = mappedProfile;
+    return Ok(result);
   }
   [HttpPut]
   public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto profileDto)
   {
-    var result = new Result<User>();
+    var result = new Result<ProfileDto>();
     if (!ModelState.IsValid)
     {
       result.Error = PopulateError(400,
@@ -96,14 +101,16 @@ public class ProfileController : BaseController
     {
       await _unitOfWork.CompleteAsync();
 
-      result.Content = profile;
+      var mappedProfile = _mapper.Map<ProfileDto>(profile);
+
+      result.Content = mappedProfile;
 
       return Ok(result);
     }
 
     result.Error = PopulateError(500,
       ErrorMessages.Generic.SomethingWentWrong,
-     ErrorMessages.Generic.UnableToProcess);
+      ErrorMessages.Generic.UnableToProcess);
     return BadRequest(result);
   }
 }

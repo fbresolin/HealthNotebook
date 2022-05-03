@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using HealthNotebook.Configuration.Messages;
 using HealthNotebook.DataService.Data;
 using HealthNotebook.DataService.IConfiguration;
 using HealthNotebook.Entities.DbSet;
 using HealthNotebook.Entities.Dtos.Generic;
+using HealthNotebook.Entities.Dtos.Outgoing;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -18,8 +20,9 @@ namespace HealthNotebook.Api.Controllers.v1;
 public class UsersController : BaseController
 {
   public UsersController(
+    IMapper mapper,
     IUnitOfWork unitOfWork,
-    UserManager<IdentityUser> userManager) : base(unitOfWork, userManager)
+    UserManager<IdentityUser> userManager) : base(mapper, unitOfWork, userManager)
   {
   }
   // Get
@@ -29,7 +32,7 @@ public class UsersController : BaseController
   {
     var user = await _unitOfWork.Users.GetById(Id);
 
-    var result = new Result<User>();
+    var result = new Result<ProfileDto>();
 
     if (user == null)
     {
@@ -39,26 +42,23 @@ public class UsersController : BaseController
       return NotFound(result);
     }
 
-    result.Content = user;
+    var mappedProfile = _mapper.Map<ProfileDto>(user);
+    result.Content = mappedProfile;
     return Ok(result);
   }
   // Post
   [HttpPost]
   public async Task<IActionResult> AddUser(UserDto userDto)
   {
-    var user = new User();
-    user.FirstName = userDto.FirstName;
-    user.LastName = userDto.LastName;
-    user.Email = userDto.Email;
-    user.Phone = userDto.Phone;
-    user.Country = userDto.Country;
-    user.DateOfBirth = Convert.ToDateTime(userDto.DateOfBirth);
-    user.Status = 1;
+    var user = _mapper.Map<UserDto, User>(userDto);
 
     await _unitOfWork.Users.Add(user);
     await _unitOfWork.CompleteAsync();
 
-    return CreatedAtRoute("GetUser", new { Id = user.Id }, userDto); // return a 201
+    var result = new Result<UserDto>();
+    result.Content = userDto;
+
+    return CreatedAtRoute("GetUser", new { Id = user.Id }, result); // return a 201
   }
   // Get All
   [HttpGet]

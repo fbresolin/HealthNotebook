@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using HealthNotebook.Authentication.Configuration;
 using HealthNotebook.Authentication.Models.Dto.Generic;
 using HealthNotebook.Authentication.Models.Dto.Incoming;
@@ -25,15 +26,15 @@ public class AccountsController : BaseController
   private readonly TokenValidationParameters _tokenValidationParameters;
   private readonly JwtConfig _jwtConfig;
   public AccountsController(
+      IMapper mapper,
       IUnitOfWork unitOfWork,
       UserManager<IdentityUser> userManager,
       TokenValidationParameters tokenValidationParameters,
-      IOptionsMonitor<JwtConfig> optionsMonitor) : base(unitOfWork, userManager)
+      IOptionsMonitor<JwtConfig> optionsMonitor) : base(mapper, unitOfWork, userManager)
   {
     _tokenValidationParameters = tokenValidationParameters;
     _jwtConfig = optionsMonitor.CurrentValue;
   }
-
   // Register Action
   [HttpPost]
   [Route("Register")]
@@ -195,7 +196,8 @@ public class AccountsController : BaseController
 
       // check expiry date
       var utcExpiryDate = long
-      .Parse(principal.Claims.FirstOrDefault(d => d.Type == JwtRegisteredClaimNames.Exp).Value);
+      .Parse(principal.Claims
+      .FirstOrDefault(d => d.Type == JwtRegisteredClaimNames.Exp).Value);
 
       // convert to date to check
       var expiryDate = UnixTimeStampToDateTime(utcExpiryDate);
