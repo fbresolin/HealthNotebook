@@ -197,7 +197,8 @@ public class AccountsController : BaseController
       // check expiry date
       var utcExpiryDate = long
       .Parse(principal.Claims
-      .FirstOrDefault(d => d.Type == JwtRegisteredClaimNames.Exp).Value);
+      .FirstOrDefault(d => d.Type == JwtRegisteredClaimNames.Exp)
+      .Value);
 
       // convert to date to check
       var expiryDate = UnixTimeStampToDateTime(utcExpiryDate);
